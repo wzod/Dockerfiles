@@ -46,7 +46,7 @@ RUN apt-get -qq update && apt-get install -y \
   chmod +x wzod_mastiff_installer.sh && \
   ./wzod_mastiff_installer.sh /home/nonroot/mastiff && \
   chown -R nonroot:nonroot /home/nonroot && \
-  cp /.mastiff.conf /etc/ && cp /.mastiff.conf /home/nonroot/
+  cp /.mastiff.conf /etc/ && cp /.mastiff.conf /home/nonroot/ && \
 
   apt-get remove -y --purge automake build-essential libtool && \
   apt-get autoremove -y --purge && \
