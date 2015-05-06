@@ -1,5 +1,5 @@
 #
-# This Docker image encapsulates the MASTIFF static analysis framework
+# This Docker image encapsulates the MASTIFF static analysis framewor (version 0.6.0)
 # by The MASTIFF Project at KoreLogic from https://github.com/KoreLogicSecurity/mastiff
 #
 # To run this image after installing Docker, use a command like this, replacing “~/mastiff-workdir"
@@ -20,8 +20,6 @@ RUN apt-get -qq update && apt-get install -y \
   build-essential \
   exiftool \
   git \
-  libc6-i386 \
-  lib32ncurses5 \
   libmagic-dev \
   libtool \
   make \
@@ -44,7 +42,7 @@ RUN apt-get -qq update && apt-get install -y \
   mv /home/wzod_mastiff_installer . && \
   cd wzod_mastiff_installer && \
   chmod +x wzod_mastiff_installer.sh && \
-  ./wzod_mastiff_installer.sh /home/nonroot/mastiff && \
+  ./wzod_mastiff_installer.sh /home/nonroot/ && \
   chown -R nonroot:nonroot /home/nonroot && \
   cp /.mastiff.conf /etc/ && cp /.mastiff.conf /home/nonroot/ && \
 
@@ -56,4 +54,4 @@ RUN apt-get -qq update && apt-get install -y \
 USER nonroot
 ENV HOME /home/nonroot
 ENV USER nonroot
-WORKDIR /home/nonroot/mastiff
+WORKDIR /home/nonroot/mastiff-0.6.0
