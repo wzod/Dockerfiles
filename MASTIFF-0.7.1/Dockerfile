@@ -36,15 +36,16 @@ RUN apt-get -qq update && apt-get install -y \
 
   groupadd -r nonroot && \
   useradd -r -g nonroot -d /home/nonroot -s /sbin/nologin -c "Nonroot User" nonroot && \
-  mkdir /home/nonroot && \
-  chown -R nonroot:nonroot /home/nonroot && \
+  mkdir -pv /home/nonroot/workdir && \
   cd /home/nonroot && \
   mv /home/wzod_mastiff_installer . && \
   cd wzod_mastiff_installer && \
   chmod +x wzod_mastiff_0.7.1_installer.sh && \
   ./wzod_mastiff_0.7.1_installer.sh /home/nonroot/ && \
-  chown -R nonroot:nonroot /home/nonroot && \
   cp /home/nonroot/mastiff-0.7.1/mastiff.conf /home/nonroot/.mastiff.conf && \
+  sed -i "/^log_dir/ s|\.\/workdir\/log|\/home\/nonroot\/workdir|" /home/nonroot/.mastiff.conf && \
+  cp -vf /home/nonroot/.mastiff.conf /home/nonroot/mastiff-0.7.1/mastiff.conf && \
+  chown -R nonroot:nonroot /home/nonroot && \
   rm -vrf /home/nonroot/wzod_mastiff_installer && \
   rm -vrf /home/nonroot/mastiff_setup && \
 
