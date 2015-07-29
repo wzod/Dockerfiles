@@ -5,7 +5,7 @@
 # To run this image after installing Docker using a standalone instnace, use a command like this, 
 # replacing “~/laikaboss-workdir" with the path to the location of your Laika BOSS directory:
 #
-# sudo docker run --rm -it -v ~/laikaboss-workdir:/home/nonroot/workdir remnux/laikaboss
+# sudo docker run --rm -it -v ~/laikaboss-workdir:/home/nonroot/workdir laikaboss
 #
 # To run this image using a networked instance, use a command like this:
 #
