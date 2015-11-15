@@ -6,11 +6,11 @@
 # Volatility Foundation from http://www.volatilityfoundation.org/#!releases/component_71401
 #
 # To run this image after installing Docker, use the following command:
-# sudo docker run --rm -it -v ~/memdumps:/home/nonroot/memdumps wzod/evolve bash
+# sudo docker run --rm -it -v ~/memdumps:/home/nonroot/memdumps wzod/evolveweb bash
 #
 # To access the Evolve web interface from outside the Docker container, use the command:
 #
-# sudo docker run --rm -it -v ~/memdumps:/home/nonroot/memdumps -p 8080:8080 evolve bash
+# sudo docker run --rm -it -v ~/memdumps:/home/nonroot/memdumps -p 8080:8080 wzod/evolveweb bash
 #
 # Before running Evolve, create the ~/memdumps directory and make it world-accessible
 # (“chmod a+xwr").
